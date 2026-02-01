@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: product-service
-        image: product-service:1.0
+        image: lalit1202/product-service:1.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8002

@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: user-service
-        image: user-service:1.0
+        image: lalit1202/user-service:1.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8000
