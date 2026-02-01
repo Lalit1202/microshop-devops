@@ -16,7 +16,7 @@ spec:
       containers:
       - name: ui-service
         image: lalit1202/ui-service:1.0
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 8090
         env:

@@ -16,7 +16,7 @@ spec:
       containers:
       - name: order-service
         image: lalit1202/order-service:1.0
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 8003
         env:
