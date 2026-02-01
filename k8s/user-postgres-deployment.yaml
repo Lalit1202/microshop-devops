@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-postgres
+  namespace: microshop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user-postgres
+  template:
+    metadata:
+      labels:
+        app: user-postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:15
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_DB
+          value: usersdb
+        - name: POSTGRES_USER
+          value: userapp
+        - name: POSTGRES_PASSWORD
+          value: userpass
+        volumeMounts:
+        - name: user-db-storage
+          mountPath: /var/lib/postgresql/data
+      volumes:
+      - name: user-db-storage
+        persistentVolumeClaim:
+          claimName: user-postgres-pvc

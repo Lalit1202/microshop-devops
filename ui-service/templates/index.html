@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Microshop</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>🛒 Microshop</h1>
+
+    <form method="post" action="/create-order">
+        <label>User ID:</label>
+        <input type="number" name="user_id" required>
+
+        <label>Product ID:</label>
+        <input type="number" name="product_id" required>
+
+        <button type="submit">Create Order</button>
+    </form>
+
+    {% if result %}
+        <h2>Result</h2>
+        <pre>{{ result }}</pre>
+    {% endif %}
+</body>
+</html>

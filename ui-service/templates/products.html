@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Products</title></head>
+<body>
+<h2>Products</h2>
+
+{% for p in products %}
+<form method="post" action="/order">
+    <input type="hidden" name="product_id" value="{{ p.id }}">
+    {{ p.name }} - ₹{{ p.price }}
+    <button type="submit">Buy</button>
+</form>
+{% endfor %}
+
+<a href="/orders">My Orders</a>
+</body>
+</html>

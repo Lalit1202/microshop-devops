@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Login</title></head>
+<body>
+<h2>Login</h2>
+
+<form method="post" action="/login">
+    <select name="user_id" required>
+        {% for user in users %}
+        <option value="{{ user.id }}">{{ user.name }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Login</button>
+</form>
+
+<a href="/register">Register New User</a>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>My Orders</title></head>
+<body>
+<h2>My Orders</h2>
+
+{% for o in orders %}
+<p>
+    {{ o.product.name }} - ₹{{ o.product.price }} ({{ o.status }})
+</p>
+{% endfor %}
+
+<a href="/products">Back to Products</a>
+</body>
+</html>
